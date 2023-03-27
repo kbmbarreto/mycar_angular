@@ -4,8 +4,7 @@ import { FormComponent } from './pages/pages/form/form.component';
 import { ListComponent } from './pages/list/list.component';
 import { ManufacturerFormComponent } from './components/manufacturer-form/manufacturer-form.component';
 import { ManufacturerListComponent } from './components/manufacturer-list/manufacturer-list.component';
-
-
+import {ManufacturerRoutingModule} from "./manufacturer-routing.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +14,8 @@ import { ManufacturerListComponent } from './components/manufacturer-list/manufa
     ManufacturerListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ManufacturerRoutingModule,
   ]
 })
 export class ManufacturerModule { }

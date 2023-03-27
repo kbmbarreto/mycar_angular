@@ -1,1 +1,13 @@
-<p>manufacturer-list works!</p>
+<table>
+  <thead>
+    <th *ngFor="let item of headers">{{item.headerName}}</th>
+  </thead>
+
+  <tbody>
+    <tr (click)="selectManufacturer(item)" *ngFor="let item of manufacturers">
+      <ng-container *ngFor="let header of headers">
+        <td>{{item[header.fieldName]}}</td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>

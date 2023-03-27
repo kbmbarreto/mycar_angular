@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Manufacturer} from "../../models/manufacturer.interface";
 
 @Component({
   selector: 'app-manufacturer-list',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManufacturerListComponent implements OnInit {
 
+  @Input() headers: Array<{headerName: string, fieldName: keyof Manufacturer}> = [];
+  @Input() manufacturers: Array<Manufacturer> = [];
+  @Output() manufacturer = new EventEmitter();
+
   constructor() { }
+
+  selectManufacturer(manufacturer: Manufacturer) {
+    this.manufacturer.emit(manufacturer);
+  }
 
   ngOnInit(): void {
   }
-
 }
